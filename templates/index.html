@@ -8,100 +8,26 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../static/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/fontello.css">
-    <title>Отбор астронавтов</title>
-    <h1>Анкета претендента</h1>
-    <h2>на участие в миссии</h2>
+    <title>Варианты выбора</title>
+    <h1>Мое предложение: {{title}}</h1>
 </head>
 <body>
-    <div>
-        <form class="login_form" method="post">
-            <input class="form-control" type="text" name="firstname" id="firstname" placeholder="Введите фамилию">
-            <input class="form-control" type="text" name="name" id="name" placeholder="Введите имя">
-            <div class="form-group">
-                <p></p>
-                <input class="form-control" type="email" name="email" id="email" placeholder="Введите адрес почты">
-                <p>Какое у вас образование?</p>
-                <select name="education" class="form-control" id="education">
-                    <option value="Без образования">Без образования</option>
-                    <option value="Начальное">Начальное</option>
-                    <option value="Среднее">Среднее</option>
-                    <option value="Бакалавриат">Бакалавриат</option>
-                    <option value="Магистратура">Магистратура</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <p></p>
-                <label for="form-check">Какие у вас есть профессии?</label>
-                <p></p>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="profession" id="1" value="Research Engineer" checked>
-                    <label class="form-check-label" for="1">Инженер исследователь</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="profession" id="2" value="Civil engineer">
-                    <label class="form-check-label" for="2">Инженер строитель</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="profession" id="3" value="Pilot">
-                    <label class="form-check-label" for="3">Пилот</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="profession" id="4" value="Meteorologist">
-                    <label class="form-check-label" for="4">Метеоролог</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="profession" id="4" value="Meteorologist">
-                    <label class="form-check-label" for="4">экзобиолог</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="profession" id="4" value="Meteorologist">
-                    <label class="form-check-label" for="4">врач</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="profession" id="4" value="Meteorologist">
-                    <label class="form-check-label" for="4">инженер по терраформированию</label>
-                </div>
-            </div>
-            <div class="form-group">
-                <p></p>
-                <label for="form-check">Укажите пол</label>
-                <p></p>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="sex" id="male" value="male" checked>
-                  <label class="form-check-label" for="male">
-                    Мужской
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="sex" id="female" value="female">
-                  <label class="form-check-label" for="female">
-                    Женский
-                  </label>
-                </div>
-            </div>
-            <div class="form-group">
-                <p></p>
-                <label for="about"> Почему вы хотите принять участие в миссии?</label>
-                <textarea class="form-control" id="about" rows="3" name="about"></textarea>
-            </div>
-            <div class="form-group">
-                <p></p>
-                <label for="photo">Приложите фотографию</label>
-                <input type="file" class="form-control-file" id="photo" name="file">
-            </div>
-            <div class="form-group">
-                <p></p>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="mars" id="mars" value="mars">
-                    <label for="mars" class="form-check-label">Готовы остаться на марсе?</label>
-                </div>
-            </div>
-            <div>
-                <button type="button" class="btn btn-primary">Отправить</button>
-            </div>
-        </form>
-
+    <div class="alert alert-primary" role="alert">
+        Эта планета близка к земле
     </div>
+    <div class="alert alert-secondary" role="alert">
+        На ней много необходимых ресурсов
+    </div>
+    <div class="alert alert-success" role="alert">
+        На ней есть вода и атмосфера
+    </div>
+    <div class="alert alert-danger" role="alert">
+        На ней есть небольшое магнитное поле
+    </div>
+    <div class="alert alert-warning" role="alert">
+        Наконец, она просто красива
+    </div>
+    
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
