@@ -5,13 +5,14 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['POST', 'GET'])
-@app.route('/form_sample', methods=['POST', 'GET'])
-def form_sample():
+@app.route('/sample_file_upload', methods=['POST', 'GET'])
+def sample_file_upload():
     if request.method == 'GET':
         return render_template('index.html')
     elif request.method == 'POST':
+        f = request.files['file']
         with open('static/img/img.png', 'wb') as file:
-            file.write(request.form['file'].read())
+            file.write(f.read())
         return "Форма отправлена"
 
 
