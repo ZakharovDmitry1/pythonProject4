@@ -1,12 +1,18 @@
+import requests.cookies
 from flask import *
 
 app = Flask(__name__)
 
 
-@app.route('/')
-@app.route('/choice/<string:planet_name>')
-def index(planet_name):
-    return render_template('index.html', title=planet_name)
+@app.route('/', methods=['POST', 'GET'])
+@app.route('/form_sample', methods=['POST', 'GET'])
+def form_sample():
+    if request.method == 'GET':
+        return render_template('index.html')
+    elif request.method == 'POST':
+        with open('static/img/img.png', 'wb') as file:
+            file.write(request.form['file'].read())
+        return "Форма отправлена"
 
 
 if __name__ == '__main__':
