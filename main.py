@@ -1,19 +1,23 @@
 import requests.cookies
 from flask import *
+from jinja2 import *
 
 app = Flask(__name__)
 
+file_loader = FileSystemLoader('templates')
+env = Environment(loader=file_loader)
+temmplate = env.get_template("index.html")
 
-@app.route('/', methods=['POST', 'GET'])
-@app.route('/sample_file_upload', methods=['POST', 'GET'])
-def sample_file_upload():
-    if request.method == 'GET':
-        return render_template('index.html')
-    elif request.method == 'POST':
-        f = request.files['file']
-        with open('static/img/img.png', 'wb') as file:
-            file.write(f.read())
-        return "Форма отправлена"
+
+@app.route('/')
+@app.route('/training/<prof>')
+def sample_file_upload(prof='hi'):
+    if prof.find('строитель') != -1:
+        return temmplate.render(title=prof, title2='Научные симуляторы', number=0)
+    elif prof.find('инженер') != -1:
+        return temmplate.render(title=prof, title2='Инженерные тренажеры', number=1)
+    else:
+        return temmplate.render(title=prof, title2='Работа дворником', number=2)
 
 
 if __name__ == '__main__':
