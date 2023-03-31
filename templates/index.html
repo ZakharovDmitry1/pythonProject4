@@ -1,32 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form action="" method="post">
-
-        <img src="https://yastatic.net/s3/lyceum/content/images/second-year/web/MARS-2-7.png" alt="Проверьте соединение с интернетом">
-        <label for="">Аварийный доступ</label>
-
-        <div>
-            <p>id астронавта</p>
-            <input type="text" name="" id="">
-        </div>
-        <div>
-            <p>Пароль астронавта</p>
-            <input type="text" name="" id="">
-        </div>
-        <div>
-            <p>id капитана</p>
-            <input type="text" name="" id="">
-        </div>
-        <div>
-            <p>Пароль капитана</p>
-            <input type="text" name="" id="">
-        </div>
-        <p></p>
-
-
-
-        <button type="button" class="btn btn-primary">Доступ</button>
-    </form>
-
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <h4>Размещение по каютам</h4>
+    {% for item in items %}
+        <p>{{item}} - Каюта № {{loop.index}}</p>
+    {% endfor %}
 {% endblock %}

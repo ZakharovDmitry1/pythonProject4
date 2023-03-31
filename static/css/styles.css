@@ -10,9 +10,11 @@ h3 {
     color: #d7d8da;
 }
 h4 {
-    border: 20px;
+    padding: 20px;
 }
-
-form {
-    padding-left: 5%;
+p {
+    border-left: 60px;
+}
+main.container {
+    border-left: 60px;
 }
