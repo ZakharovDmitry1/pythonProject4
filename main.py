@@ -8,16 +8,16 @@ file_loader = FileSystemLoader('templates')
 env = Environment(loader=file_loader)
 temmplate = env.get_template("index.html")
 
+items = "инженер-исследователь, пилот, строитель, экзобиолог, врач," \
+        " инженер по терраформированию, климатолог, специалист по радиационной защите," \
+        " астрогеолог, гляциолог, инженер жизнеобеспечения, метеоролог, оператор марсохода," \
+        " киберинженер, штурман, пилот дронов".split(', ')
+
 
 @app.route('/')
-@app.route('/training/<prof>')
-def sample_file_upload(prof='hi'):
-    if prof.find('строитель') != -1:
-        return temmplate.render(title=prof, title2='Научные симуляторы', number=0)
-    elif prof.find('инженер') != -1:
-        return temmplate.render(title=prof, title2='Инженерные тренажеры', number=1)
-    else:
-        return temmplate.render(title=prof, title2='Работа дворником', number=2)
+@app.route('/list_prof/<p>')
+def sample_file_upload(p=''):
+    return render_template('index.html', items=items, list=p)
 
 
 if __name__ == '__main__':

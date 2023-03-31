@@ -12,23 +12,24 @@
     <h1>Миссия Колонизация Марса</h1>
 </head>
 <body>
+    <h3 class="alert alert-primary" role="alert">И на марсе будут яблони цвести!</h3>
     <div class="form">
         <form action="">
-            <h3>И на марсе будут яблони цвести!</h3>
-            <h2 for="">{{title2}}</h2>
-            {% if number == 0 %}
-                <div>
-                    <img style="width: 200px; height:150px;" src="https://avatars.mds.yandex.net/i?id=faab7446d1c2c4bd1277962376ae1092cb14f711-5099198-images-thumbs&n=13" alt="">
-                </div>
-            {% elif number == 1 %}
-                <div>
-                    <img style="width: 200px; height:150px;" src="https://avatars.mds.yandex.net/i?id=df9cc8c1c2ea7033783a7bbd2035ec95b49e458c-7754220-images-thumbs&n=13" alt="">
-                </div>
+            {% if list=='ol' %}
+                <ol>
+                    {% for item in items %}
+                        <li>{{item}}</li>
+                    {% endfor %}
+                </ol>
+            {% elif list=='ul' %}
+                <ul>
+                    {% for item in items %}
+                        <li>{{item}}</li>
+                    {% endfor %}
+                </ul>
             {% else %}
-                <div>
-                    <img style="width: 200px; height:150px;" src="https://swmodel.my1.ru/_ld/1/178.jpg" alt="">
-                </div>
-        {% endif %}
+                Неверный параметр
+            {% endif %}
 
         </form>
 
