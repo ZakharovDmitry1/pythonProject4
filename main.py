@@ -8,12 +8,10 @@ file_loader = FileSystemLoader('templates')
 env = Environment(loader=file_loader)
 temmplate = env.get_template("index.html")
 
-items = ['Ридли Скотт', 'Энди Уир', 'Марк Уотни',
-                  'Венката Капур', 'Тедди Сандерс', 'Шон Бин']
 @app.route('/')
 @app.route('/distribution/')
 def sample_file_upload():
-    return render_template('index.html', items=items)
+    return render_template('index.html', sex='male', age=12)
 
 
 if __name__ == '__main__':

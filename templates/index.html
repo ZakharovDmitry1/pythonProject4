@@ -2,8 +2,69 @@
 
 {% block content %}
     <link rel="stylesheet" href="../static/css/styles.css">
-    <h4>Размещение по каютам</h4>
-    {% for item in items %}
-        <p>{{item}} - Каюта № {{loop.index}}</p>
-    {% endfor %}
+    <h2>Оформление каюты</h2>
+    <form action="">
+    {% if sex=='male' and age<21%}
+        <table class="table-secondary">
+            <thead>
+                <tr>
+                    <th align="center" bgcolor="#AEAAA7">Цвет стен</th>
+                    <th align="center" bgcolor="#AEAAA7">Эмблема</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="width: 400px" bgcolor="#8F89FF"></td>
+                    <td><img src="static/img/img.png" alt=""></td>
+                </tr>
+            </tbody>
+        </table>
+    {% elif sex=='male' and age>=21%}
+        <table class="table-secondary">
+            <thead>
+                <tr>
+                    <th align="center" bgcolor="#AEAAA7">Цвет стен</th>
+                    <th align="center" bgcolor="#AEAAA7">Эмблема</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="width: 400px" bgcolor="#170BDE"></td>
+                    <td><img src="static/img/img_1.png" alt=""></td>
+                </tr>
+            </tbody>
+        </table>
+    {% elif sex=='female' and age<21%}       
+        <table class="table-secondary">
+            <thead>
+                <tr>
+                    <th align="center" bgcolor="#AEAAA7">Цвет стен</th>
+                    <th align="center" bgcolor="#AEAAA7">Эмблема</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="width: 400px" bgcolor="#FF9284"></td>
+                    <td><img src="static/img/img.png" alt=""></td>
+                </tr>
+            </tbody>
+        </table>
+    {%else%}
+        <table class="table-secondary">
+            <thead>
+                <tr>
+                    <th align="center" bgcolor="#AEAAA7">Цвет стен</th>
+                    <th align="center" bgcolor="#AEAAA7">Эмблема</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="width: 400px" bgcolor="#FF1E00"></td>
+                    <td><img src="static/img/img_1.png" alt=""></td>
+                </tr>
+            </tbody>
+
+        </table>
+    {%endif%}
+    </form>
 {% endblock %}
