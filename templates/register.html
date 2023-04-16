@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block Headfunc %}
+    <script type="text/javascript">
+        function Check() {
+            if (document.cell.Password.value!=document.cell.Repeat_password.value) {
+                alert("Пароли не совпадают, попробуйте еще раз")
+            } else if (!document.cell.Login.value) {
+                alert("Введите логин")
+            } else if (!document.cell.Surname.value) {
+                alert("Введите фамилию")
+            } else if (!document.cell.Name.value) {
+                alert("Введите имя")
+            } else if (!document.cell.Age.value) {
+                alert("Введите возраст")
+            } else if (!document.cell.Position.value) {
+                alert("Введите позицию")
+            } else if (!document.cell.Speciality.value) {
+                alert("Введите специальность")
+            } else if (!document.cell.Addess.value) {
+                alert("Введите адрес")
+            } else if (!document.cell.password.value) {
+                alert("Введите пароль")
+            }
+        }
+
+    </script>
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <form name="cell" class="form-control" enctype="multipart/form-data" method="post" onsubmit="return Check();">
+    <h1>Register Form</h1>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Login / email</label>
+        <input name="Login" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Password</label>
+        <input name="Password" type="password" class="form-control" id="" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Repeat password</label>
+        <input name="Repeat_password" type="password" class="form-control" id="" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Surname</label>
+        <input name="Surname" type="text" class="form-control" id="" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input name="Name" type="ematextil" class="form-control" id="" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Age</label>
+        <input name="Age" type="number" class="form-control" id="" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Position</label>
+        <input name="Position" type="text" class="form-control" id="" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Speciality</label>
+        <input name="Speciality" type="text" class="form-control" id="" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Addess</label>
+        <input name="Addess" type="text" class="form-control" id="" aria-describedby="emailHelp">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}
